@@ -1,0 +1,11 @@
+{
+    "project_name": "Project {% now 'utc', '%Y-%m-%d %H:%M:%S' %}",
+    "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace(':', '-') }}",
+    "package_name": "{{ cookiecutter.repo_name }}",
+    "author_name": "John Doe",
+    "github_username": "{{ cookiecutter.author_name.lower().replace(' ', '') }}",
+    "description_short": "",
+    "license": ["Apache-2.0", null],
+    "dependencies": "()",
+    "keywords": ""
+}

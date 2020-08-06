@@ -1,0 +1,3 @@
+#+STARTUP: lognoteclock-out
+
+* Clock
