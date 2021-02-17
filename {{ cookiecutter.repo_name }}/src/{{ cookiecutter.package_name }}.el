@@ -3,17 +3,15 @@
 ;; Copyright (C) {% now 'utc', '%Y' %} {{ cookiecutter.author_name }}
 
 ;; Author: {{ cookiecutter.author_name }}
-;; Package-Version: 0.0
+;; Package-Version: 0.0.0
 ;; Created: {% now 'utc', '%Y-%m-%d' %}
-{%- if cookiecutter.dependencies != "()" %}
 ;; Package-Requires: {{ cookiecutter.dependencies }}
-{%- endif %}
 {%- if cookiecutter.keywords != "" %}
 ;; Keywords: {{ cookiecutter.keywords }}
 {%- endif %}
 ;; URL: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}
 
-;; This file is not part of GNU Emacs.
+;; This file is NOT part of GNU Emacs.
 {%- if cookiecutter.license == "Apache-2.0" %}
 
 ;; Licensed under the Apache License, Version 2.0 (the "License");
