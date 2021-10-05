@@ -24,3 +24,5 @@ import os
 if __name__ == "__main__":
     if os.stat("LICENSE").st_size == 0:
         os.remove("LICENSE")
+    if os.stat(".travis.yml").st_size == 0:
+        os.remove(".travis.yml")

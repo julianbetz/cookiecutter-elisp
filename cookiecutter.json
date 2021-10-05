@@ -6,6 +6,7 @@
     "github_username": "{{ cookiecutter.author_name.lower().replace(' ', '') }}",
     "description_short": "",
     "license": ["Apache-2.0", null],
-    "keywords": ""
     "dependencies": "((emacs \"27.1\"))",
+    "keywords": "",
+    "test_framework": [null, "Travis CI"]
 }
