@@ -6,9 +6,9 @@
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
-# 
+#
 #      http://www.apache.org/licenses/LICENSE-2.0
-# 
+#
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -26,13 +26,13 @@
 # ------------------------------------------------------------------------------
 
 # Prints help messages.
-# 
+#
 # Document-level documentation blocks are indicated by three hash characters at
 # the beginning of lines.  Target documentation strings are indicated by two
 # hash characters at the beginning of lines and must comprise only a single line
 # right before the target to be documented.  They should be no longer than 60
 # characters; the targets themselves should be no longer than 19 characters.
-# 
+#
 # A document-level documentation block at the end of the file results in no
 # vertical spacing between this block and the command list.
 
