@@ -16,24 +16,25 @@
 
 ### The following subcommands are available:
 
-.PHONY: help test
 .DEFAULT_GOAL := help
 
 
 # Self-documentation
-# ------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------
 
 # Prints help messages.
 #
-# Document-level documentation blocks are indicated by three hash characters at
-# the beginning of lines.  Target documentation strings are indicated by two
-# hash characters at the beginning of lines and must comprise only a single line
-# right before the target to be documented.  They should be no longer than 60
-# characters; the targets themselves should be no longer than 19 characters.
+# Document-level documentation blocks are indicated by three hash characters
+# at the beginning of lines.  Target documentation strings are indicated by
+# two hash characters at the beginning of lines and must comprise only a
+# single line right before the target to be documented.  They should be no
+# longer than 60 characters; the targets themselves should be no longer than
+# 19 characters.
 #
 # A document-level documentation block at the end of the file results in no
 # vertical spacing between this block and the command list.
 
+.PHONY: help
 ## Print this message and exit
 help:
 	@sed -e '/^###\($$\|[^#]\)/,/^$$\|^[^#]\|^#[^#]\|^##[^#]/!d' $(MAKEFILE_LIST) | sed 's/^\($$\|[^#].*$$\|#[^#].*$$\|##[^#].*$$\)//' | sed 's/^### *//' | sed 's/  / /'
@@ -48,8 +49,9 @@ license:
 
 
 # Unit tests
-# ------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------
 
+.PHONY: test
 ## Perform unit tests
 test:
 	@emacs -Q --batch -L src -L test -l ert -l test-everything.el -f ert-run-tests-batch-and-exit
