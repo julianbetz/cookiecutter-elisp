@@ -1,12 +1,12 @@
 {
     "project_name": "Project {% now 'utc', '%Y-%m-%d %H:%M:%S' %}",
-    "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace(':', '-') }}",
-    "package_name": "{{ cookiecutter.repo_name }}",
+    "package_name": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace(':', '-') }}",
+    "repo_name": "{{ cookiecutter.package_name + '.el' }}",
     "author_name": "John Doe",
     "github_username": "{{ cookiecutter.author_name.lower().replace(' ', '') }}",
     "description_short": "",
     "license": ["Apache-2.0", null],
     "dependencies": "((emacs \"27.1\"))",
     "keywords": "",
-    "test_framework": [null, "Travis CI"]
+    "test_framework": ["Travis CI", null]
 }
