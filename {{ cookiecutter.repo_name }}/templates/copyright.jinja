@@ -1,0 +1,39 @@
+{% macro get_copyright(author_name, license, comment_string) -%}
+{% if license == "GPL-3.0-or-later" -%}
+{{ comment_string }} Copyright (C) {% now 'utc', '%Y' %} {{ author_name }}
+{% elif license == "Apache-2.0" -%}
+{{ comment_string }} Copyright {% now 'utc', '%Y' %} {{ author_name }}
+{% else -%}
+{{ comment_string }} Copyright (C) {% now 'utc', '%Y' %} {{ author_name }}
+{% endif -%}
+{% endmacro -%}
+
+
+{% macro get_license_note(license, comment_string) -%}
+{% if license == "GPL-3.0-or-later" -%}
+{{ comment_string }} This file is free software: you can redistribute it and/or modify
+{{ comment_string }} it under the terms of the GNU General Public License as published by
+{{ comment_string }} the Free Software Foundation, either version 3 of the License, or
+{{ comment_string }} (at your option) any later version.
+{{ comment_string }}
+{{ comment_string }} This file is distributed in the hope that it will be useful,
+{{ comment_string }} but WITHOUT ANY WARRANTY; without even the implied warranty of
+{{ comment_string }} MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+{{ comment_string }} GNU General Public License for more details.
+{{ comment_string }}
+{{ comment_string }} You should have received a copy of the GNU General Public License
+{{ comment_string }} along with this file.  If not, see <https://www.gnu.org/licenses/>.
+{% elif license == "Apache-2.0" -%}
+{{ comment_string }} Licensed under the Apache License, Version 2.0 (the "License");
+{{ comment_string }} you may not use this file except in compliance with the License.
+{{ comment_string }} You may obtain a copy of the License at
+{{ comment_string }}
+{{ comment_string }}      http://www.apache.org/licenses/LICENSE-2.0
+{{ comment_string }}
+{{ comment_string }} Unless required by applicable law or agreed to in writing, software
+{{ comment_string }} distributed under the License is distributed on an "AS IS" BASIS,
+{{ comment_string }} WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+{{ comment_string }} See the License for the specific language governing permissions and
+{{ comment_string }} limitations under the License.
+{% endif -%}
+{% endmacro -%}

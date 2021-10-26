@@ -1,22 +1,20 @@
 # -*- coding: utf-8 -*-
 
-# Copyright {% now 'utc', '%Y' %} {{ cookiecutter.author_name }}
-{%- if cookiecutter.license == "Apache-2.0" %}
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-{%- endif %}
-# ==============================================================================
+{% set comment_string = "#" -%}
+{% from 'templates/copyright.jinja' import get_copyright, get_license_note -%}
+{{ get_copyright(cookiecutter.author_name, cookiecutter.license, comment_string) }}
+{{ get_license_note(cookiecutter.license, comment_string) }}
+{% if cookiecutter.license == "GPL-3.0-or-later" -%}
+### {{ cookiecutter.project_name }} Copyright (C) {% now 'utc', '%Y' %} {{ cookiecutter.author_name }}
+### This program comes with ABSOLUTELY NO WARRANTY.
+### This is free software, and you are welcome to redistribute it
+### under certain conditions.  Type `make license' for details.
 
+{% endif -%}
+# ============================================================================
+
+
+### The following subcommands are available:
 
 .PHONY: help test
 .DEFAULT_GOAL := help
@@ -40,6 +38,13 @@
 help:
 	@sed -e '/^###\($$\|[^#]\)/,/^$$\|^[^#]\|^#[^#]\|^##[^#]/!d' $(MAKEFILE_LIST) | sed 's/^\($$\|[^#].*$$\|#[^#].*$$\|##[^#].*$$\)//' | sed 's/^### *//' | sed 's/  / /'
 	@grep -E '^##[^#]' -A 1 $(MAKEFILE_LIST) | sed 's/^\([^ #][^ ]*\):\($$\| .*$$\)/\1/' | awk 'BEGIN {RS = "\n--\n"; FS = "\n"}; {sub(/^## */, "", $$1); printf "\033[32m%-19s\033[0m %s\n", $$2, $$1}'
+{%- if cookiecutter.license == "GPL-3.0-or-later" %}
+
+.PHONY: license
+## Show licensing and warranty conditions
+license:
+	@"$${PAGER}" LICENSE
+{%- endif %}
 
 
 # Unit tests

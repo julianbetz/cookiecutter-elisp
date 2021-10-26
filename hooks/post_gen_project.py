@@ -19,6 +19,7 @@
 
 
 import os
+import shutil
 
 
 if __name__ == "__main__":
@@ -26,3 +27,4 @@ if __name__ == "__main__":
         os.remove("LICENSE")
     if os.stat(".travis.yml").st_size == 0:
         os.remove(".travis.yml")
+    shutil.rmtree("templates")
