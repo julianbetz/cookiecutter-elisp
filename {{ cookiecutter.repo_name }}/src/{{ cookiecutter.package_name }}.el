@@ -4,7 +4,8 @@
 {% from 'templates/copyright.jinja' import get_copyright, get_license_note -%}
 {{ get_copyright(cookiecutter.author_name, cookiecutter.license, comment_string) }}
 ;; Author: {{ cookiecutter.author_name }}
-;; Package-Version: 0.0.0
+;; Version: 0.1.0
+;; Package-Version: 0.1.0
 ;; Created: {% now 'utc', '%Y-%m-%d' %}
 ;; Package-Requires: {{ cookiecutter.dependencies }}
 {% if cookiecutter.keywords != "" -%}
