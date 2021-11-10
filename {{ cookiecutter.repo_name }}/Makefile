@@ -54,4 +54,4 @@ license:
 .PHONY: test
 ## Perform unit tests
 test:
-	@emacs -Q --batch -L src -L test -l ert -l test-everything.el -f ert-run-tests-batch-and-exit
+	@emacs -Q --batch -L src/elisp -L test/elisp -l ert -l test-everything.el -f ert-run-tests-batch-and-exit
